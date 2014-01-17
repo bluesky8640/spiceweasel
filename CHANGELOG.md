@@ -1,5 +1,21 @@
 This is the current, previous and future development milestones and contains the features backlog.
 
+# 2.8.0 #
+
+* update Gem dependencies
+* rubocop cleanups
+
+* Printed deletion knife commands are incorrect for rackspace server delete ISSUE 65
+* flags for just 1 part of the manifest (implies no validation) ISSUE 57
+ * --nodes
+ * --databags
+ * --environments
+* Cluster: safely concatenate options string, even with newline inside ISSUE 63
+* Zero padding with {{n}} ISSUE 62
+* cluster delete throws an error https://github.com/mattray/spiceweasel/issues/59
+* data_bag should be encrypted only if secret: is passed https://github.com/mattray/spiceweasel/issues/58
+* Chef Zero as a target
+
 # 2.6.0 #
 
 * Linode and Digital Ocean support (Fletcher Nichol)
@@ -241,7 +257,6 @@ This is the current, previous and future development milestones and contains the
 * publish as a gem on RubyGems
 
 # BACKLOG #
-* add Tailor testing
 * ADDITIONAL VALIDATION
  * environment-specific run_lists
  * sort roles by dependencies of other roles?
@@ -266,7 +281,3 @@ This is the current, previous and future development milestones and contains the
  * ie. "knife cookbook upload apt\n knife cookbook upload ntp" instead of 1 liner
 * do we need to support concept of Groups from Berkshelf, to allow uploading multiple versions of cookbooks?
 * cluster support, check to see how many nodes result that match the query?
-* flags for just 1 part of the manifest (implies no validation)
- * --nodes
- * --databags
- * --environments
