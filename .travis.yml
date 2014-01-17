@@ -3,8 +3,4 @@ rvm:
   - 1.9
   - 2.0
   - 2.1
-  - jruby-19mode
-  - rbx-2.0
-  - rbx-2.1
-# uncomment this line if your project needs to run something other than `rake`:
 script: bundle exec rspec spec
