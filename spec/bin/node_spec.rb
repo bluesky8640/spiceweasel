@@ -63,7 +63,7 @@ knife digital_ocean droplet create -S mray -i ~/.ssh/mray.pem -x ubuntu -I ami-7
     @spiceweasel_binary = File.join(File.dirname(__FILE__), *%w[.. .. bin spiceweasel])
   end
 
-  it "test for cluster deletion and digital_ocean and linode in 2.6" do
+  it 'test for cluster deletion and digital_ocean and linode in 2.6' do
     `#{@spiceweasel_binary} --rebuild --novalidation examples/node-example.yml`.should == @expected_output
   end
 
@@ -120,7 +120,7 @@ knife node run_list set DOweb3 'role[webserver],recipe[mysql::client]'
     @spiceweasel_binary = File.join(File.dirname(__FILE__), *%w[.. .. bin spiceweasel])
   end
 
-  it "tests node deletion and creation using --node-only" do
+  it 'tests node deletion and creation using --node-only' do
     `#{@spiceweasel_binary} --node-only --rebuild --novalidation examples/node-example.yml`.should == @expected_output
   end
 

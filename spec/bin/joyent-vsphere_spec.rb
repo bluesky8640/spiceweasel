@@ -37,7 +37,7 @@ seq 2 | parallel -u -j 0 -v "knife vsphere vm clone -P secret_password -x Admini
     @spiceweasel_binary = File.join(File.dirname(__FILE__), *%w[.. .. bin spiceweasel])
   end
 
-  it "test joyent, vsphere and --bulkdelete functionality from 2.3" do
+  it 'test joyent, vsphere and --bulkdelete functionality from 2.3' do
     `#{@spiceweasel_binary} --parallel --bulkdelete -r --novalidation examples/joyent-vsphere-example.yml`.should == @expected_output
   end
 

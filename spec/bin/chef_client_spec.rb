@@ -34,15 +34,15 @@ knife ssh 'chef_environment:amazon and role:webserver and recipe:mysql\\:\\:clie
     @spiceweasel_binary = File.join(File.dirname(__FILE__), *%w[.. .. bin spiceweasel])
   end
 
-  it "test chef-client in 2.5, yml" do
+  it 'test chef-client in 2.5, yml' do
     `#{@spiceweasel_binary} --novalidation --chef-client examples/example.yml`.should == @expected_output
   end
 
-  it "test chef-client in 2.5, json" do
+  it 'test chef-client in 2.5, json' do
     `#{@spiceweasel_binary} --chef-client examples/example.json --novalidation`.should == @expected_output
   end
 
-  it "test chef-client in 2.5, rb" do
+  it 'test chef-client in 2.5, rb' do
     `#{@spiceweasel_binary} examples/example.rb --novalidation --chef-client`.should == @expected_output
   end
 end
@@ -61,15 +61,15 @@ knife ssh 'chef_environment:qa and role:webserver and recipe:mysql\\:\\:client' 
     @spiceweasel_binary = File.join(File.dirname(__FILE__), *%w[.. .. bin spiceweasel])
   end
 
-  it "test chef-client with --cluster-file in 2.5, yml" do
+  it 'test chef-client with --cluster-file in 2.5, yml' do
     `#{@spiceweasel_binary} --novalidation --chef-client --cluster-file examples/cluster-file-example.yml examples/example.yml`.should == @expected_output
   end
 
-  it "test chef-client with --cluster-file in 2.5, json" do
+  it 'test chef-client with --cluster-file in 2.5, json' do
     `#{@spiceweasel_binary} --cluster-file examples/cluster-file-example.yml --novalidation examples/example.json --chef-client`.should == @expected_output
   end
 
-  it "test chef-client with --cluster-file in 2.5, rb" do
+  it 'test chef-client with --cluster-file in 2.5, rb' do
     `#{@spiceweasel_binary} --novalidation --chef-client examples/example.rb --cluster-file examples/cluster-file-example.yml`.should == @expected_output
   end
 end
@@ -84,7 +84,7 @@ knife ssh 'chef_environment:mycluster and role:webserver and recipe:mysql\\:\\:c
     @spiceweasel_binary = File.join(File.dirname(__FILE__), *%w[.. .. bin spiceweasel])
   end
 
-  it "test chef-client with -a ec2.public_hostname in 2.5" do
+  it 'test chef-client with -a ec2.public_hostname in 2.5' do
     `#{@spiceweasel_binary} --novalidation --chef-client -a ec2.public_hostname examples/example-cluster.yml`.should == @expected_output
   end
 

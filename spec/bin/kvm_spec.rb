@@ -41,7 +41,7 @@ seq 3 | parallel -u -j 0 -v "knife kvm vm create --template-file ~/.chef/bootstr
     @spiceweasel_binary = File.join(File.dirname(__FILE__), *%w[.. .. bin spiceweasel])
   end
 
-  it "test kvm, cluster functionality from 2.5" do
+  it 'test kvm, cluster functionality from 2.5' do
     `#{@spiceweasel_binary} --parallel -r --novalidation examples/kvm-example.yml`.should == @expected_output
   end
 

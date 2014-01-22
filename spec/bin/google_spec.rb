@@ -65,7 +65,7 @@ knife google server create g-qa2 -m n1-standard-1 -I debian-7-wheezy-v20130723 -
     @spiceweasel_binary = File.join(File.dirname(__FILE__), *%w[.. .. bin spiceweasel])
   end
 
-  it "test knife-google functionality from 2.6" do
+  it 'test knife-google functionality from 2.6' do
     `#{@spiceweasel_binary} -r --novalidation examples/google-example.yml`.should == @expected_output
   end
 
@@ -117,7 +117,7 @@ seq 2 | parallel -u -j 0 -v "knife google server create g-qa{} -m n1-standard-1 
     @spiceweasel_binary = File.join(File.dirname(__FILE__), *%w[.. .. bin spiceweasel])
   end
 
-  it "test knife-google functionality from 2.6" do
+  it 'test knife-google functionality from 2.6' do
     `#{@spiceweasel_binary} --parallel -r --novalidation examples/google-example.yml`.should == @expected_output
   end
 

@@ -30,7 +30,7 @@ knife ssh "role:webserver" "sudo chef-client" -x ubuntu
     @spiceweasel_binary = File.join(File.dirname(__FILE__), *%w[.. .. bin spiceweasel])
   end
 
-  it "test knife commands from 2.4" do
+  it 'test knife commands from 2.4' do
     `#{@spiceweasel_binary} examples/knife.yml`.should == @expected_output
   end
 
