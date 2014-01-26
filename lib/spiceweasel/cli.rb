@@ -165,11 +165,11 @@ module Spiceweasel
            short: '-C COOKBOOK_DIR',
            long: '--cookbook-dir COOKBOOK_DIR',
            description: 'Set cookbook directory. Specify multiple times for multiple directories.',
-           proc: lambda do |v|
+           proc: lambda { |v|
              Spiceweasel::Config[:cookbook_dir] ||= []
              Spiceweasel::Config[:cookbook_dir] << v
              Spiceweasel::Config[:cookbook_dir].uniq!
-           end
+           }
 
     option :unique_id,
            long: '--unique-id UID',
