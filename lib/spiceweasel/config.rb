@@ -20,6 +20,7 @@
 require 'mixlib/config'
 
 module Spiceweasel
+  # configuration defaults for Spiceweasel
   class Config
     extend Mixlib::Config
 
@@ -42,6 +43,5 @@ module Spiceweasel
     parallel false
     rebuild false
     siteinstall false
-
   end
 end
