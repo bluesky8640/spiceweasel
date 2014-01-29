@@ -35,7 +35,7 @@ module Spiceweasel
     end
 
     # configure the individual nodes within the cluster
-    def cluster_process_nodes(cluster, environment, cookbooks, environments, roles, knifecommands) # rubocop:disable ParameterLists
+    def cluster_process_nodes(cluster, environment, cookbooks, environments, roles, knifecommands)
       Spiceweasel::Log.debug("cluster::cluster_process_nodes '#{environment}' '#{cluster[environment]}'")
       cluster[environment].each do |node|
         node_name = node.keys.first

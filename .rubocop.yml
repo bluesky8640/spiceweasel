@@ -16,3 +16,7 @@ WordArray:
 # Ignore this for now
 MethodLength:
   Max: 125
+
+# validation requires other objects
+ParameterLists:
+  Enabled: false
