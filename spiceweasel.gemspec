@@ -27,5 +27,5 @@ Gem::Specification.new do |s|
   s.add_dependency('berkshelf', '< 3')
   s.add_dependency('solve', '~> 0.8') # some what redundant since provided via berkshelf
   s.add_development_dependency('rspec', '~> 2.14')
-  s.add_development_dependency('rubocop', '~> 0.16')
+  s.add_development_dependency('rubocop', '~> 0.18')
 end
