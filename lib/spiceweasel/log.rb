@@ -20,12 +20,11 @@
 require 'mixlib/log'
 
 module Spiceweasel
+  # configure logging
   class Log
     extend Mixlib::Log
 
-    #not quite ready for timestamps
+    # not quite ready for timestamps
     Mixlib::Log::Formatter.show_time = false
-
   end
 end
-
