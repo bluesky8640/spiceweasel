@@ -17,6 +17,7 @@
 # limitations under the License.
 #
 
+# Spicweasel::Version
 module Spiceweasel
   VERSION = '2.8.0'
 end
