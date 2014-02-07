@@ -20,24 +20,24 @@
 require 'mixlib/shellout'
 
 module Spiceweasel
+  # use mixlib/shellout to execute the knife commands
   class Execute
-
     # run the commands passed in
     def initialize(commands)
       # for now we're shelling out
       commands.each do | cmd |
         Spiceweasel::Log.debug("Command will timeout after #{Spiceweasel::Config[:cmd_timeout]} seconds.")
-        knife = Mixlib::ShellOut.new(cmd.command, cmd.shellout_opts.merge(:live_stream => STDOUT, :timeout => Spiceweasel::Config[:timeout].to_i))
+        knife = Mixlib::ShellOut.new(cmd.command,
+                                     cmd.shellout_opts.merge(live_stream: STDOUT,
+                                                             timeout: Spiceweasel::Config[:timeout].to_i))
         # check for parallel? and eventually use threads
         knife.run_command
         puts knife.stderr
         Spiceweasel::Log.debug(cmd)
         Spiceweasel::Log.debug(knife.stdout)
-        Spiceweasel::Log.fatal(knife.stderr) if !knife.stderr.empty?
+        Spiceweasel::Log.fatal(knife.stderr) unless knife.stderr.empty?
         find.error! unless cmd.allow_failure?
       end
     end
-
   end
 end
-
