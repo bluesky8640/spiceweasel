@@ -2,7 +2,7 @@ This is the current, previous and future development milestones and contains the
 
 # 2.8.0 #
 
-* update Gem dependencies
+* updated Gem dependencies
 * rubocop cleanups
 
 * Printed deletion knife commands are incorrect for rackspace server delete ISSUE 65
@@ -268,10 +268,6 @@ This is the current, previous and future development milestones and contains the
   * load in the librarian file
   * output the knife commands
   * validate the librarian cookbooks vs. roles, environments and run lists
-* CONVERT TO A KNIFE PLUGIN
- * knife batch create from file infrastructure.yml
- * knife batch delete from file infrastructure.json
- * knife batch rebuild from file infrastructure.yml
 * EXTRACT EXISTING INFRASTRUCTURE FROM CHEF SERVER (or just use knife download?)
  * knife batch extract to a tarball named for the organization
  * option to include credentials and knife.rb
@@ -281,3 +277,10 @@ This is the current, previous and future development milestones and contains the
  * ie. "knife cookbook upload apt\n knife cookbook upload ntp" instead of 1 liner
 * do we need to support concept of Groups from Berkshelf, to allow uploading multiple versions of cookbooks?
 * cluster support, check to see how many nodes result that match the query?
+## Targetted for 3.0 ##
+* CONVERT TO A KNIFE PLUGIN
+ * knife batch create from file infrastructure.yml
+ * knife batch delete from file infrastructure.json
+ * knife batch rebuild from file infrastructure.yml
+* Output as Chef Metal recipe
+* should spiceweasel talk directly to the Chef API?
