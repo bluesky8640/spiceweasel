@@ -201,7 +201,7 @@ module Spiceweasel
       else
         if Spiceweasel::Config[:parallel]
           #parallel = "seq #{count} | parallel -u -j 0 -v \""
-	  parallel = "parallel -j 0 -i "
+	  parallel = "parallel -j 100 -i "
           if provider.eql?('vsphere')
             parallel += "knife #{provider}#{Spiceweasel::Config[:knife_options]} vm clone #{options}".gsub(/\{\{n\}\}/, '{}')
           elsif provider.eql?('kvm')
