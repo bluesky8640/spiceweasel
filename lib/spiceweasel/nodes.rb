@@ -201,7 +201,7 @@ module Spiceweasel
       else
         if Spiceweasel::Config[:parallel]
           #parallel = "seq #{count} | parallel -u -j 0 -v \""
-		  parallel = "parallel -j 0 -i "
+	  parallel = "parallel -j 0 -i "
           if provider.eql?('vsphere')
             parallel += "knife #{provider}#{Spiceweasel::Config[:knife_options]} vm clone #{options}".gsub(/\{\{n\}\}/, '{}')
           elsif provider.eql?('kvm')
@@ -215,7 +215,7 @@ module Spiceweasel
           end
           parallel += " -r '#{run_list}'" unless run_list.empty?
           #parallel += "\""
-		  parallel += " -- $(seq #{count})"
+	  parallel += " -- $(seq #{count})"
           create_command(parallel, create_command_options)
         else
           count.to_i.times do |i|
